@@ -93,11 +93,25 @@ max(Clean_Data$Item[Clean_Data$Item != max(Clean_Data$Item)])
  #TOP 10 Products Top 100 sales According to transaction
  
  top100 = as.data.frame(head(Clean_Data[order(Clean_Data$Item, decreasing = TRUE), 1:4], n = 100))
- view(top100)
+ View(top100)
  
  ggplot(top100, aes(x = Item ,y = Transaction,fill = "red")) + 
    geom_col() + coord_flip() + xlab("Items")
 
+ 
+ #Q3: finding min sold item 
+ r = min(Clean_Data$Item[Clean_Data$Item != min(Clean_Data$Item)])
+ r
+ 
+ q3 <- Clean_Data[which(Clean_Data$Item=='Afternoon with the baker'),]
+ View(q3)
+ 
+ 
+ 
+ q3 <- q3[c(-4)]
+
+
+ 
  
  
  
